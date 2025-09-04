@@ -1,15 +1,18 @@
-let score = 0;
+let score = localStorage.getItem("score") || 0;
 let scoreText = document.getElementById("score");
+scoreText.innerHTML = score;
 let currentQuestion = null;
 
 function scoreIncrease() {
   score++;
+  localStorage.setItem("score", String(score));
   scoreText.innerHTML = score;
 }
 
 function scoreDecrease() {
   if (score != 0) {
     score--;
+    localStorage.setItem("score", String(score));
     scoreText.innerHTML = score;
   }
 }
@@ -28,6 +31,8 @@ function displayQuestion(questionData) {
 
   quizCategory.innerHTML = `Category: ${questionData.category}`;
   quizQuestion.innerHTML = `Question: ${questionData.question}`;
+
+  console.log(localStorage.getItem("score"));
 }
 
 function buttonHandling() {
