@@ -33,6 +33,10 @@ body {
   text-align: center;
 }
 
+#quiz-icon {
+  width: 100px;
+}
+
 .buttons {
   background-color: #dedcff;
   color: #050315;
