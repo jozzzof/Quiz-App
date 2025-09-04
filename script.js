@@ -28,8 +28,6 @@ function displayQuestion(questionData) {
 
   quizCategory.innerHTML = `Category: ${questionData.category}`;
   quizQuestion.innerHTML = `Question: ${questionData.question}`;
-
-  console.log(questionData.correct_answer);
 }
 
 function buttonHandling() {
