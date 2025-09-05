@@ -65,9 +65,15 @@ function buttonHandling() {
   });
 }
 
-function fetchCondition() {
+function hideNextQuestionButton() {
   const nextQuestionButton = document.getElementById("next-question-button");
   nextQuestionButton.style.visibility = "hidden";
+}
+
+function fetchCondition() {
+  hideNextQuestionButton();
+  loadingAnswer();
+
   fetch("https://opentdb.com/api.php?amount=1&difficulty=medium&type=boolean")
     .then((response) => {
       if (!response.ok) {
