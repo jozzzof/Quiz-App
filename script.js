@@ -17,6 +17,16 @@ function scoreDecrease() {
   }
 }
 
+function playCorrectSound() {
+  const audio = new Audio("assets/sounds/correct-answer-sfx.wav");
+  audio.play();
+}
+
+function playWrongSound() {
+  const audio = new Audio("assets/sounds/wrong-answer-sfx.wav");
+  audio.play();
+}
+
 function loadingAnswer() {
   const quizCategory = document.getElementById("question-category");
   const quizQuestion = document.getElementById("question-text");
@@ -49,10 +59,12 @@ function buttonHandling() {
       if (currentQuestion.correct_answer === clickedButton) {
         event.target.classList.add("correct-button");
         questionAnswer.innerHTML = "You got a correct answer!";
+        playCorrectSound();
         scoreIncrease();
       } else {
         event.target.classList.add("wrong-button");
         questionAnswer.innerHTML = "You got a wrong answer!";
+        playWrongSound();
         scoreDecrease();
       }
 
