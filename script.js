@@ -33,6 +33,10 @@ function loadingAnswer() {
 
   quizCategory.innerHTML = `Category: Loading, Please Wait...`;
   quizQuestion.innerHTML = `Question: Loading, Please Wait...`;
+
+  document
+    .querySelectorAll(".answer-button")
+    .forEach((btn) => (btn.disabled = true));
 }
 
 function displayQuestion(questionData) {
@@ -42,7 +46,9 @@ function displayQuestion(questionData) {
   quizCategory.innerHTML = `Category: ${questionData.category}`;
   quizQuestion.innerHTML = `Question: ${questionData.question}`;
 
-  console.log(localStorage.getItem("score"));
+  document
+    .querySelectorAll(".answer-button")
+    .forEach((btn) => (btn.disabled = false));
 }
 
 function buttonHandling() {
