@@ -1,4 +1,5 @@
 <img width="1496" height="934" alt="Updated Screenshot" src="https://github.com/user-attachments/assets/c991c088-b4bd-4d07-bfc9-d9e70f343a1f" />
+
 ## Quiz Game App
 
 
